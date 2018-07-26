@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-upisdkmockplugin" version="0.0.1">
+
+    <name>UpiSdkMockPlugin</name>
+
+    <description>An Android Cordova plugin that allows Kotak's UPI SDK.</description>
+
+    <license>MIT</license>
+
+    <keywords>cordova,android,upi,intent</keywords>
+
+    <repo>https://github.com/sanjredfield/upi-sdk-plugin/upi-sdk-plugin.git</repo>
+
+    <issue>https://github.com/sanjredfield/upi-sdk-plugin/issues</issue>
+
+    <engines>
+        <engine name="cordova" version=">=7.0.0"/>
+    </engines>
+
+    <js-module src="www/upiSdkMockPlugin.js" name="upiSdkMockPlugin">
+        <clobbers target="window.plugins.upiSdkMockPlugin" />
+    </js-module>
+
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="UpiSdkMockPlugin">
+                <param name="android-package" value="com.easyplan.cordova.plugin.mocks.UpiSdkMockPlugin"/>
+            </feature>
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+          <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+          <uses-permission android:name="android.permission.SEND_SMS" />
+          <uses-permission android:name="android.permission.INTERNET" />
+          <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+          <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+        </config-file>
+        <source-file src="src/android/UpiSdkMockPlugin.java" target-dir="src/com/easyplan/cordova/plugin/mocks" />
+        <source-file src="src/android/TestActivity.java" target-dir="src/com/easyplan/cordova/plugin/mocks" />
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+          <activity
+            android:label="Test Activity"
+            android:name="com.easyplan.cordova.plugin.mocks.TestActivity"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen"
+          >
+          <!-- android:theme="@android:style/Theme.Translucent.NoTitleBar" -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+          </activity>
+        </config-file>
+    </platform>
+</plugin>

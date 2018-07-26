@@ -1,0 +1,34 @@
+{
+  "name": "cordova-plugin-upisdkmockplugin",
+  "version": "0.0.1",
+  "description": "An Android Cordova plugin that allows Kotak's UPI SDK.",
+  "cordova": {
+    "id": "cordova-plugin-upisdkmockplugin",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sanjredfield/upi-sdk-plugin.git"
+  },
+  "keywords": [
+    "UPI",
+    "SDK",
+    "Kotak",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=7.0.0"
+    }
+  ],
+  "author": "Sanjay Gandhi <sanj.redfield@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sanjredfield/upi-sdk-plugin/issues"
+  },
+  "homepage": "https://github.com/sanjredfield/upi-sdk-plugin/"
+}
